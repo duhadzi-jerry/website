@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Your Tech Company</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
-            background-color: #000; /* Black background for smooth transitions */
+            background-color: #000;
+            font-family: 'Poppins', sans-serif;
+            color: white;
         }
 
         .section {
@@ -24,49 +32,249 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            font-size: 2rem;
-            color: white;
             opacity: 0;
-            transform: scale(1.1); /* Initially slightly zoomed out */
+            transform: scale(1.1);
         }
 
-        #section1 { background-color: #1e1e2f; }
-        #section2 { background-color: #007bff; }
+        #section1 { 
+            background: linear-gradient(135deg, #1e1e2f, #3a3a56);
+        }
+
+        .hero-text {
+            font-size: 3rem;
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        .sub-text {
+            font-size: 1.3rem;
+            font-weight: 300;
+            max-width: 60%;
+            margin-top: 10px;
+            opacity: 0;
+        }
+
+        .icons {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            opacity: 0;
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .icon-box:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Particle Effect */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: floatParticle 5s infinite ease-in-out;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.7; }
+            100% { transform: translateY(0); opacity: 0.3; }
+        }
+
+
+        #section2 {
+		    background: linear-gradient(135deg, #007bff, #0056b3);
+		    color: white;
+		    padding: 50px 10%;
+		    text-align: center;
+		}
+
+		.services-heading {
+		    font-size: 2.5rem;
+		    font-weight: 600;
+		    margin-bottom: 10px;
+		}
+
+		.services-subtext {
+		    font-size: 1.2rem;
+		    margin-bottom: 30px;
+		}
+
+		.services-container {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		    gap: 20px;
+		    justify-content: center;
+		}
+
+		.service-card {
+		    background: rgba(255, 255, 255, 0.1);
+		    padding: 20px;
+		    border-radius: 12px;
+		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		    transition: transform 0.3s, box-shadow 0.3s;
+		    text-align: center;
+		}
+
+		.service-card:hover {
+		    transform: translateY(-5px);
+		    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+		}
+
+		.service-icon {
+		    font-size: 3rem;
+		    margin-bottom: 10px;
+		    transition: transform 0.3s;
+		}
+
+		.service-card:hover .service-icon {
+		    transform: scale(1.1);
+		}
+
+		.service-card h2 {
+		    font-size: 1.5rem;
+		    margin: 10px 0;
+		}
+
+		.service-card p {
+		    font-size: 1rem;
+		    opacity: 0.9;
+		}
+
+
         #section3 { background-color: #28a745; }
+        .contact-icons {
+		    display: flex;
+		    gap: 30px;
+		    margin-top: 20px;
+		}
+
+		.icon-box {
+		    width: 80px;
+		    height: 80px;
+		    background: rgba(255, 255, 255, 0.1);
+		    border-radius: 15px;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    font-size: 2rem;
+		    transition: transform 0.3s, background 0.3s;
+		    position: relative;
+		    cursor: pointer;
+		}
+
+		.icon-box:hover {
+		    transform: scale(1.1);
+		    background: rgba(255, 255, 255, 0.2);
+		}
+
+		.icon-box span {
+		    position: absolute;
+		    bottom: -30px;
+		    background: rgba(0, 0, 0, 0.8);
+		    color: white;
+		    padding: 5px 10px;
+		    border-radius: 5px;
+		    font-size: 1rem;
+		    opacity: 0;
+		    transition: opacity 0.3s, transform 0.3s;
+		    transform: translateY(10px);
+		    white-space: nowrap;
+		}
+
+		.icon-box:hover span {
+		    opacity: 1;
+		    transform: translateY(0);
+		}
 
     </style>
 </head>
 <body>
 
     <div class="section" id="section1">
-        <h1>Welcome to Our Tech Company</h1>
-        <p>We specialize in web and app development.</p>
+    	<div class="particles"></div>
+        <h1 class="hero-text">Welcome to TSN</h1>
+        <p class="sub-text" id="typed-text"></p>
+        
+        <div class="icons">
+            <div class="icon-box">🌐</div>
+            <div class="icon-box">📱</div>
+            <div class="icon-box">💡</div>
+        </div>
     </div>
     <div class="section" id="section2">
-        <h1>Our Services</h1>
-        <p>We provide top-notch web and app development solutions.</p>
-    </div>
+	    <h1 class="services-heading">Our Services</h1>
+	    <p class="services-subtext">We provide top-notch web and app development solutions.</p>
+	    
+	    <div class="services-container">
+	        <div class="service-card">
+	            <div class="service-icon">🌍</div>
+	            <h2>Custom Software Development <br>& Website Development</h2>
+	            <p>Building modern, responsive, and scalable websites and software solutions designed to meet your unique business requirements.</p>
+	        </div>
+
+	        <div class="service-card">
+	            <div class="service-icon">📱</div>
+	            <h2>Mobile App Development</h2>
+	            <p>Creating high-performance iOS and Android apps that engage users.</p>
+	        </div>
+	    </div>
+	</div>
+
     <div class="section" id="section3">
-        <h1>Contact Us</h1>
-        <p>Get in touch to start your project today.</p>
-    </div>
+	    <h1>Contact Us</h1>
+	    <p>Get in touch to start your project today.</p>
+
+	    <div class="contact-icons">
+	        <div class="icon-box" onclick="showInfo(this, 'jerry.duhadzi@gmail.com')">
+	            <i class="fas fa-envelope"></i>
+	        </div>
+	        <div class="icon-box" onclick="showInfo(this, '+233 59 722 4964')">
+	            <i class="fas fa-phone"></i>
+	        </div>
+	        <div class="icon-box" onclick="showInfo(this, 'Accra, Ghana')">
+	            <i class="fas fa-map-marker-alt"></i>
+	        </div>
+	    </div>
+	</div>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let currentSection = 0;
             const sections = document.querySelectorAll(".section");
 
-            // Initial animation for the first section
             gsap.to(sections[0], { opacity: 1, scale: 1, duration: 1, ease: "power2.out" });
+            gsap.to(".hero-text", { opacity: 1, y: -20, duration: 1.2, ease: "power2.out", delay: 0.3 });
+            gsap.to(".sub-text", { opacity: 1, y: -10, duration: 1.2, ease: "power2.out", delay: 0.6 });
+            gsap.to(".icons", { opacity: 1, y: -5, duration: 1.2, ease: "power2.out", delay: 0.9 });
 
             function fadeToSection(index) {
                 if (index >= 0 && index < sections.length) {
-                    // Hide current section
                     gsap.to(sections[currentSection], { opacity: 0, scale: 1.1, duration: 0.8, ease: "power2.inOut" });
-
-                    // Show next section with fade and smooth zoom
                     gsap.to(sections[index], { opacity: 1, scale: 1, duration: 1, ease: "power2.out" });
-
                     currentSection = index;
                 }
             }
@@ -77,7 +285,6 @@
                 if (isScrolling) return;
                 isScrolling = true;
                 setTimeout(() => isScrolling = false, 1000);
-
                 if (event.deltaY > 0) {
                     fadeToSection(currentSection + 1);
                 } else {
@@ -93,7 +300,6 @@
                 }
             });
 
-            // Mobile Swipe Gesture Support
             let startY = 0, endY = 0;
 
             document.addEventListener("touchstart", (event) => {
@@ -103,7 +309,6 @@
             document.addEventListener("touchend", (event) => {
                 endY = event.changedTouches[0].clientY;
                 let deltaY = startY - endY;
-
                 if (Math.abs(deltaY) > 50) {
                     if (deltaY > 0) {
                         fadeToSection(currentSection + 1);
@@ -112,8 +317,56 @@
                     }
                 }
             });
-
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+		    gsap.from(".service-card", {
+		        opacity: 0,
+		        y: 50,
+		        duration: 1,
+		        stagger: 0.2,
+		        ease: "power2.out"
+		    });
+		});
+
+		function showInfo(element, text) {
+		    let existingSpan = element.querySelector("span");
+		    
+		    if (existingSpan) {
+		        existingSpan.remove(); // Remove if already present
+		    } else {
+		        let span = document.createElement("span");
+		        span.innerText = text;
+		        element.appendChild(span);
+		        
+		        // Hide after 3 seconds
+		        setTimeout(() => {
+		            span.remove();
+		        }, 3000);
+		    }
+		}
+
+        // Typed.js for typewriter effect
+        new Typed("#typed-text", {
+            strings: ["We craft cutting-edge websites, mobile apps with innovation and precision."],
+            typeSpeed: 50,
+            backSpeed: 10,
+            loop: true
+        });
+
+        // Particle Animation
+        function createParticles() {
+            const particlesContainer = document.querySelector(".particles");
+            for (let i = 0; i < 50; i++) {
+                let particle = document.createElement("div");
+                particle.classList.add("particle");
+                particle.style.top = Math.random() * 100 + "%";
+                particle.style.left = Math.random() * 100 + "%";
+                particle.style.animationDelay = Math.random() * 5 + "s";
+                particlesContainer.appendChild(particle);
+            }
+        }
+        createParticles();
     </script>
 
 </body>
