@@ -21,7 +21,7 @@
         html, body {
             margin: 0;
             padding: 0;
-           	height: 100dvh;
+           	height: 100vh;
             width: 100%;
             overflow: hidden;
             background-color: #000;
@@ -29,6 +29,8 @@
             color: white;
             touch-action: manipulation;
             font-size: 15px;
+            display: flex;
+    		flex-direction: column;
         }
 
         a {
@@ -38,7 +40,7 @@
         .section {
             position: absolute;
             width: 100%;
-            height: 100dvh; 
+            height: 100vh; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,6 +60,7 @@
 		    align-items: center;
 		    text-align: center;
 		    color: white; /* Text color */
+		    flex: 1 0 auto;
 		}
 
 		.overlay {
@@ -120,7 +123,7 @@
 
         #section2 {
 			background: linear-gradient(135deg, #4B0082, #342465);
-
+			flex: 1 0 auto;
 		    color: white;
 		    padding: 50px 10%;
 		    text-align: center;
@@ -179,11 +182,20 @@
 		}
 
 
-        #section3 { background: linear-gradient(135deg, #E63946, #C74C77); }
+        #section3 
+        { 
+        	background: linear-gradient(135deg, #E63946, #C74C77); 
+			flex: 1 0 auto;
+		    color: white;
+		    padding: 50px 10%;
+		    text-align: center;
+		}
+
         .contact-icons {
 		    display: flex;
 		    gap: 30px;
 		    margin-top: 20px;
+		    flex: 1 0 auto;
 		}
 
 		.icon-box {
@@ -243,7 +255,7 @@
 
 		#section4 {
 			background: linear-gradient(15deg, #4B0182, #347465);
-
+			flex: 1 0 auto;
 		    color: white;
 		    padding: 50px 10%;
 		    text-align: center;
@@ -251,10 +263,14 @@
 
 		#section5 {
 			background: linear-gradient(15deg, #1D9182, #347Bc5);
-
+			flex: 1 0 auto;
 		    color: white;
 		    padding: 50px 10%;
 		    text-align: center;
+		}
+
+		.section::-webkit-scrollbar {
+		    display: none;
 		}
 
 
