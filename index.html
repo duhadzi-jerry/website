@@ -122,64 +122,80 @@
 
 
         #section2 {
-			background: linear-gradient(135deg, #4B0082, #342465);
-			flex: 1 0 auto;
-		    color: white;
-		    padding: 50px 10%;
-		    text-align: center;
-		}
+	    background: linear-gradient(135deg, #1E3C72, #2A5298); 
+	    flex: 1 0 auto;
+	    color: white;
+	    padding: 60px 8%;
+	    text-align: center;
+	}
 
-		.services-heading {
-		    font-size: 2.5rem;
-		    font-weight: 600;
-		    margin-bottom: 10px;
-		}
+	.services-container {
+	    display: grid;
+	    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	    gap: 25px;
+	    justify-content: center;
+	    margin-top: 30px;
+	}
 
-		.services-subtext {
-		    font-size: 1.2rem;
-		    margin-bottom: 30px;
-		}
+	.service-card {
+	    background: rgba(255, 255, 255, 0.1);
+	    padding: 25px;
+	    border-radius: 12px;
+	    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+	    text-align: center;
+	}
 
-		.services-container {
-		    display: grid;
-		    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		    gap: 20px;
-		    justify-content: center;
-		}
+	.service-card:hover {
+	    transform: translateY(-8px);
+	    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	    background: rgba(255, 255, 255, 0.15);
+	}
 
-		.service-card {
-		    background: rgba(255, 255, 255, 0.1);
-		    padding: 20px;
-		    border-radius: 12px;
-		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-		    transition: transform 0.3s, box-shadow 0.3s;
-		    text-align: center;
-		}
+	.service-icon {
+	    font-size: 3rem;
+	    margin-bottom: 15px;
+	    color: #FFD700;
+	    transition: transform 0.3s, color 0.3s;
+	}
 
-		.service-card:hover {
-		    transform: translateY(-5px);
-		    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-		}
+	.service-card:hover .service-icon {
+	    transform: scale(1.1);
+	    color: #ffcc00;
+	}
 
-		.service-icon {
-		    font-size: 3rem;
-		    margin-bottom: 10px;
-		    transition: transform 0.3s;
-		}
+	.service-card h2 {
+	    font-size: 1.5rem;
+	    margin: 10px 0;
+	}
 
-		.service-card:hover .service-icon {
-		    transform: scale(1.1);
-		}
+	.service-card p {
+	    font-size: 1rem;
+	    opacity: 0.9;
+	}
 
-		.service-card h2 {
-		    font-size: 1.5rem;
-		    margin: 10px 0;
-		}
+	/* Responsive adjustments */
+	@media (max-width: 991px) {
+	    .services-container {
+	        grid-template-columns: 1fr;
+	        width: 90vw;
+	    }
 
-		.service-card p {
-		    font-size: 1rem;
-		    opacity: 0.9;
-		}
+	    .hero-text {
+	        font-size: 2.5rem;
+	    }
+
+	    .services-subtext {
+	        font-size: 1.1rem;
+	    }
+	}
+
+	@media (min-width: 992px) {
+	    .services-container {
+	        width: 60vw;
+	    }
+	}
+
 
 
         #section3 { background: linear-gradient(135deg, #E63946, #C74C77); flex: 1 0 auto; }
@@ -229,20 +245,14 @@
 
 
 		@media (max-width: 991px) {
-		    .services-container { grid-template-columns: 1fr; }
 		    .icons { flex-direction: column; gap: 15px; }
 		    .icon-box { width: 60px; height: 60px; font-size: 1.5rem; }
 		    .hero-text { font-size: 2rem; }
 		    .sub-text { font-size: 1rem; max-width: 80%; }
-		    .services-container { width: 80dvw;}
 
 
 		}
 
-		 @media (min-width: 991px) {
-		    .services-container { width: 35dvw;}
-
-		}
 
 		#section4 {
 			background: linear-gradient(15deg, #4B0182, #347465);
@@ -278,96 +288,55 @@
 	</div>
 
 
+	<!-- Services Section -->
 	<div class="section" id="section2">
 	    <h1 class="hero-text">What We Do</h1>
-	    <p class="services-subtext">We provide top-notch custom web and app development solutions.</p>
-	    
+	    <p class="sub-text">We provide top-notch custom web and mobile app development solutions.</p>
+
 	    <div class="services-container">
 	        <div class="service-card">
-	            <div class="service-icon">🌍📱</div>
-    			<h2>Custom Software, Website & Mobile App Development</h2>
-	            <!-- <p>Building modern, responsive, and scalable mobile apps, websites and software solutions designed to meet your unique business requirements.</p> -->
+	            <div class="service-icon">🌍</div>
+	            <h4>Custom Web Apps & Website</h4>
+	            <p>We craft modern, scalable, and secure solutions tailored to your business needs.</p>
+	        </div>
+
+	        <div class="service-card">
+	            <div class="service-icon">📱</div>
+	            <h4>Mobile App Development</h4>
+	            <p>We build high-performance mobile apps with seamless user experience and robust backend.</p>
 	        </div>
 
 	    </div>
 	</div>
 
-	<div class="section" id="section4">
-	    <h1 class="hero-text">Our Latest Project</h1>
-	    <p class="services-subtext">
-	        An online store system that simplifies shopping and order management.
-	    </p>
-
-	    <p class="sub-text">
-	        A seamless, user-friendly platform for hassle-free shopping and easy store management.
-	    </p>
-	    
-	</div>
-
-	<div class="section" id="section4">
-	    <h1 class="hero-text">Key Benefits For Shoppers</h1>
-	    <div class="d-flex justify-content-center">
-	            <div class="col-md-6">
-	                <ul class="list-group list-group-flush text-start">
-	                    <li class="list-group-item"><strong>🚀 No Sign-Up Required:</strong> Browse our clean and intuitive interface for effortless discovery and shop without creating an account.</li>
-	                    <li class="list-group-item"><strong>🛒 Simple Ordering:</strong> Add items to cart and checkout in just a few clicks.</li>
-	                    <li class="list-group-item"><strong>📩 Instant Confirmation:</strong> Receive email updates on order status and receipt for every successful transaction..</li>
-	                </ul>
-	            </div>
-	            
-	        </div>
-	</div>
-
-	<div class="section" id="section4">
-	    <h1 class="hero-text">Key Benefits For Store Owners</h1>
-	    <div class="d-flex justify-content-center">
-	            <div class="col-md-6">
-	                <ul class="list-group list-group-flush text-start">
-	                    <li class="list-group-item"><strong>📦 Order Management:</strong> Easily track and process incoming orders from anywhere on any device.</li>
-	                    <li class="list-group-item"><strong>🛍️ Product Management:</strong> Add, edit, and update items effortlessly on the go.</li>
-	                    <li class="list-group-item"><strong>🎯 Promotions & Discounts:</strong> Create special offers and promotional deals anytime.</li>
-	                </ul>
-	            </div>
-	        </div>
-	</div>
+	<!-- Add Font Awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
 	<div class="section" id="section4">
 	    <h1 class="hero-text">Do you manage an online store?</h1>
-
-	     <p class="sub-text">
-	     	Get your online store up and running effortlessly with our flexible pricing plans.
+	    <p class="sub-text">
+	        Introducing our seamless, user-friendly platform for hassle-free shopping and easy store management.
 	    </p>
+	    <div class="row">
+	        <div class="col-md-6 col-sm-12">
+	            <h3>🥇 Benefit for Shoppers</h3>
+	            <p>No Sign-Up Required, seamless shopping experience</p>
+	        </div>
+	        <div class="col-md-6 col-sm-12">
+	            <h3>🥇 Benefit for Shop Owners</h3>
+	            <p>Easy Set-Up, effortless Product & Order Management</p>
+	        </div>
+	    </div>
+
 	    
-	     <div class="row align-items-center mb-4">
-		    <div class="col-md-12">
-		    	<!-- <p class="pg-txt">No sign-up required. your customers can order on the go and you can manage the orders efficiently and seemlessly.</p> -->
-		      		      
-		      	<h4>Pricing Plans</h4>
-		      	<div class="plans" style="display: flex; gap: 10px; margin-top: 10px;">
-	                <div class="plan" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; text-align: center;">
-	                    <h5>3<br>Month Plan</h5>
-	                    <p>GH₵5,300</p>
-	                </div>
-	                <div class="plan" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.2); border-radius: 10px; text-align: center;">
-	                    <h5>6<br>Month Plan</h5>
-	                    <p>GH₵7,600</p>
-	                </div>
-	                <div class="plan" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.3); border-radius: 10px; text-align: center;">
-	                    <h5>9<br>Month Plan</h5>
-	                    <p>GH₵9,900</p>
-	                </div>
-            	</div>
-		    </div>
-		  </div>
+	    
 	</div>
 
 	<div class="section" id="section5">
 	    <h3 class="hero-text">Building Trust, Simplifying Tech, Nurturing Growth.</h3>
 	    <i class="sub-text">""Innovation is the bridge between imagination and reality. At TSN Softwares, we don’t just build solutions—we create experiences that redefine possibilities."</i>
 	</div>
-
-
 
 
 
@@ -392,111 +361,112 @@
 
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let currentSection = 0;
-            const sections = document.querySelectorAll(".section");
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let currentSection = 0;
+    const sections = document.querySelectorAll(".section");
+    const totalSections = sections.length;
+    let isScrolling = false;
 
-            gsap.to(sections[0], { opacity: 1, scale: 1, duration: 1, ease: "power2.out" });
-            gsap.to(".hero-text", { opacity: 1, y: -20, duration: 1.2, ease: "power2.out", delay: 0.3 });
-            gsap.to(".sub-text", { opacity: 1, y: -10, duration: 1.2, ease: "power2.out", delay: 0.6 });
-            gsap.to(".icons", { opacity: 1, y: -5, duration: 1.2, ease: "power2.out", delay: 0.9 });
+    // Initial Animation
+    gsap.to(sections[0], { opacity: 1, scale: 1, duration: 1, ease: "power2.out" });
+    gsap.to(".hero-text", { opacity: 1, y: -20, duration: 1.2, ease: "power2.out", delay: 0.3 });
+    gsap.to(".sub-text", { opacity: 1, y: -10, duration: 1.2, ease: "power2.out", delay: 0.6 });
+    gsap.to(".icons", { opacity: 1, y: -5, duration: 1.2, ease: "power2.out", delay: 0.9 });
 
-            function fadeToSection(index) {
-			    if (index >= 0 && index < sections.length) {
-			        gsap.to(sections[currentSection], { opacity: 0, duration: 0.8, ease: "power2.inOut" });
-			        gsap.to(sections[index], { opacity: 1, duration: 1, ease: "power2.out" });
-			        currentSection = index;
-			    }
-			}
+    function fadeToSection(index) {
+        if (index === currentSection || index < 0 || index >= totalSections) return;
+        
+        gsap.to(sections[currentSection], { opacity: 0, duration: 0.8, ease: "power2.inOut" });
+        gsap.to(sections[index], { opacity: 1, duration: 1, ease: "power2.out" });
+        currentSection = index;
+    }
 
-            let isScrolling = false;
+    function handleScroll(event) {
+        if (isScrolling) return;
+        isScrolling = true;
+        setTimeout(() => isScrolling = false, 1000);
 
-            document.addEventListener("wheel", (event) => {
-                if (isScrolling) return;
-                isScrolling = true;
-                setTimeout(() => isScrolling = false, 1000);
-                if (event.deltaY > 0) {
-                    fadeToSection(currentSection + 1);
-                } else {
-                    fadeToSection(currentSection - 1);
-                }
-            }, { passive: false });
-
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "ArrowDown") {
-                    fadeToSection(currentSection + 1);
-                } else if (event.key === "ArrowUp") {
-                    fadeToSection(currentSection - 1);
-                }
-            });
-
-            let startY = 0, endY = 0;
-
-            document.addEventListener("touchstart", (event) => {
-                startY = event.touches[0].clientY;
-            });
-
-            document.addEventListener("touchend", (event) => {
-                endY = event.changedTouches[0].clientY;
-                let deltaY = startY - endY;
-                if (Math.abs(deltaY) > 50) {
-                    if (deltaY > 0) {
-                        fadeToSection(currentSection + 1);
-                    } else {
-                        fadeToSection(currentSection - 1);
-                    }
-                }
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-		    gsap.from(".service-card", {
-		        opacity: 0,
-		        y: 50,
-		        duration: 1,
-		        stagger: 0.2,
-		        ease: "power2.out"
-		    });
-		});
-
-		function showInfo(element, text) {
-		    let existingSpan = element.querySelector("span");
-		    if (existingSpan) {
-		        existingSpan.remove();
-		    } else {
-		        let span = document.createElement("span");
-		        span.innerText = text;
-		        element.appendChild(span);
-		        setTimeout(() => { span.remove(); }, 3000);
-		    }
-		    event.stopPropagation();
-		}
-
-
-        // Typed.js for typewriter effect
-        new Typed("#typed-text", {
-            strings: ["Building Trust,", "Simplifying Tech,", "Nurturing Growth."],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1000,
-            loop: true
-        });
-
-        // Particle Animation
-        function createParticles() {
-            const particlesContainer = document.querySelector(".particles");
-            for (let i = 0; i < 150; i++) {
-                let particle = document.createElement("div");
-                particle.classList.add("particle");
-                particle.style.top = Math.random() * 100 + "%";
-                particle.style.left = Math.random() * 100 + "%";
-                particle.style.animationDelay = Math.random() * 5 + "s";
-                particlesContainer.appendChild(particle);
-            }
+        if (event.deltaY > 0) {
+            fadeToSection(currentSection + 1);
+        } else {
+            fadeToSection(currentSection - 1);
         }
-        createParticles();
-    </script>
+    }
+
+    function handleKeydown(event) {
+        if (event.key === "ArrowDown") {
+            fadeToSection(currentSection + 1);
+        } else if (event.key === "ArrowUp") {
+            fadeToSection(currentSection - 1);
+        }
+    }
+
+    let startY = 0;
+    function handleTouchStart(event) {
+        startY = event.touches[0].clientY;
+    }
+
+    function handleTouchEnd(event) {
+        let endY = event.changedTouches[0].clientY;
+        let deltaY = startY - endY;
+        if (Math.abs(deltaY) > 50) {
+            fadeToSection(deltaY > 0 ? currentSection + 1 : currentSection - 1);
+        }
+    }
+
+    // Event Listeners
+    document.addEventListener("wheel", handleScroll, { passive: false });
+    document.addEventListener("keydown", handleKeydown);
+    document.addEventListener("touchstart", handleTouchStart);
+    document.addEventListener("touchend", handleTouchEnd);
+
+    // Service Card Animation
+    gsap.from(".service-card", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
+
+    // Show Info Tooltip
+    function showInfo(element, text) {
+        let existingSpan = element.querySelector("span");
+        if (!existingSpan) {
+            let span = document.createElement("span");
+            span.innerText = text;
+            element.appendChild(span);
+            setTimeout(() => span.remove(), 3000);
+        }
+        event.stopPropagation();
+    }
+
+    // Typewriter Effect
+    new Typed("#typed-text", {
+        strings: ["Building Trust,", "Simplifying Tech,", "Nurturing Growth."],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1000,
+        loop: true
+    });
+
+    // Particle Animation
+    function createParticles() {
+        const particlesContainer = document.querySelector(".particles");
+        for (let i = 0; i < 150; i++) {
+            let particle = document.createElement("div");
+            particle.classList.add("particle");
+            particle.style.top = Math.random() * 100 + "%";
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.animationDelay = Math.random() * 5 + "s";
+            particlesContainer.appendChild(particle);
+        }
+    }
+    createParticles();
+});
+
+</script>
 
 </body>
 </html>
