@@ -37,18 +37,23 @@
         	color: white;
         }
 
+
         .section {
-            position: absolute;
-            width: 100%;
-            height: 100vh; 
-            display: flex;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100vh;
+		    opacity: 0;
+		    display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            text-align: center;
-            opacity: 0;
-            transform: scale(1);
-        }
+		    text-align: center;
+		    transform: scale(1);
+		    transition: opacity 1s fade transform 1s fade;
+		}
+
 
 
         #section1 {
@@ -132,14 +137,14 @@
 		.services-container {
 		    display: grid;
 		    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		    gap: 5px;
+		    gap: 25px;
 		    justify-content: center;
 		    margin-top: 5px;
 		}
 
 		.service-card {
 		    background: rgba(255, 255, 255, 0.1);
-		    padding: 10px;
+		    padding: 25px;
 		    border-radius: 12px;
 		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 		    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
@@ -284,7 +289,7 @@
 	    <h1 class="hero-text">What We Do</h1>
 	    <p class="sub-text">We provide top-notch custom web and mobile app development solutions.</p>
 
-	    <div class="services-container">
+	    <div class="services-container" style="width: auto;">
 	        <div class="service-card">
 	            <div class="service-icon">🌍📱</div>
 	            <h4>Custom Web & Mobile Apps</h4>
@@ -311,9 +316,6 @@
 	            <p>Easy Set-Up, effortless Product & Order Management</p>
 	        </div>
 	    </div>
-
-	    
-	    
 	</div>
 
 	<div class="section" id="section5">
