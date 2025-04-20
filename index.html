@@ -285,20 +285,18 @@
 
 	<!-- Services Section -->
 	<div class="section" id="section2">
-	    <h1 class="hero-text">What We Do</h1>
-	    <p class="sub-text">We provide top-notch custom web and mobile app development solutions.</p>
-
-	    <div class="services-container">
-	        <div class="service-card">
-	            <div class="service-icon">🌍</div>
-	            <h4>Custom Web Apps & Websites</h4>
-	        </div>
-	        <div class="service-card">
-	            <div class="service-icon">📱</div>
-	            <h4>Mobile Apps</h4>
-	        </div>
-	    </div>
+		<h1 class="hero-text">What We Do</h1>
+		<p class="sub-text">We provide smart digital solutions tailored for all types of businesses.</p>
+	
+		<div class="services-container">
+			<div class="service-card">
+				<div class="service-icon">💡</div>
+				<h4>End-to-End Digital Solutions</h4>
+				<p>From custom websites to mobile apps, we build tools that help your business grow.</p>
+			</div>
+		</div>
 	</div>
+	
 
 	<!-- Add Font Awesome for icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -338,19 +336,27 @@
 	</div> -->
 
 	<div class="section" id="section4">
+		<h1 class="hero-text">Do Your Clients Need to Book Appointments?</h1>
+		<p class="sub-text">
+			Try our new Appointment Booking System to keep your schedule organized and your business running smoothly.
+		</p>
+	</div>
+	
+
+	<!-- <div class="section" id="section4">
 	    <h1 class="hero-text">Coming soon...</h1>
 	    <h3>"Safe Space"</h3>
 	    <p class="sub-text">
 	        A place to Share Your Thoughts, A Chance to Heal.
 	    </p>
-	</div>
+	</div> -->
 
 	
-
+<!-- 
 	<div class="section" id="section5">
 	    <h3 class="hero-text">Building Trust, Simplifying Tech, Nurturing Growth.</h3>
 	    <i class="sub-text">Innovation is the bridge between imagination and reality. At TSN Softwares, we don’t just build solutions—we create experiences that redefine possibilities."</i>
-	</div>
+	</div> -->
 
 
 
@@ -481,6 +487,29 @@
         }
         createParticles();
     </script>
+
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1200,
+        once: true
+    });
+
+    // GSAP Animation for Section 1
+    gsap.from(".hero-text", {
+        duration: 2,
+        opacity: 0,
+        y: -50,
+        ease: "power3.out"
+    });
+    gsap.from(".sub-text", {
+        duration: 2,
+        opacity: 0,
+        y: 30,
+        ease: "power3.out",
+        delay: 1
+    });
+</script>
 
 </body>
 </html>
